@@ -1,0 +1,23 @@
+html, body, #root {
+    width: 100%;
+    margin: 0;
+}
+
+#root {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.code {
+    white-space: pre;
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    overflow-x: auto;
+    margin: 5px 0 40px;
+}
+
+.spacer {
+    margin-left: 10px;
+}
