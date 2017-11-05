@@ -1,0 +1,39 @@
+{
+  "name": "rplain",
+  "version": "1.0.0",
+  "description": "React container for only children rendering",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xnimorz/rplain.git"
+  },
+  "scripts": {
+    "example": "webpack",
+    "example-watch": "webpack --watch"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "webpack": "^3.8.1"
+  },
+  "keywords": [
+    "react16",
+    "react",
+    "container",
+    "children-rendering",
+    "children"
+  ],
+  "author": "Nikita Mostovoy (nik.mostovoy@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xnimorz/rplain/issues"
+  },
+  "homepage": "https://github.com/xnimorz/rplain#readme"
+}
