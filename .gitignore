@@ -1,8 +1,0 @@
-bundle.js
-bundle.js.map
-*.esproj
-.idea
-build
-.DS_Store
-node_modules
-*.iml
