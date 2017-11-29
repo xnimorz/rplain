@@ -1,3 +1,14 @@
+## This project is out of date!
+
+In React v16.2 you can use `<> </>` construction instead of RPlain component:
+```javascript
+<>
+    <div>First</div>
+    <div>Second</div>
+    <div>Third</div>    
+</>
+```
+
 # rplain
 
 React-Component for rendering children.
