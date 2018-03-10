@@ -1,11 +1,12 @@
 ## This project is out of date!
 
-In React v16.2 you can use `<> </>` construction instead of RPlain component:
+In React v16.2 you can use `<> </>` or `<React.Fragment></React.Fragment>` construction instead of RPlain component:
+
 ```javascript
 <>
-    <div>First</div>
-    <div>Second</div>
-    <div>Third</div>    
+  <div>First</div>
+  <div>Second</div>
+  <div>Third</div>
 </>
 ```
 
@@ -16,42 +17,49 @@ React-Component for rendering children.
 На русском: https://github.com/xnimorz/rplain/blob/master/README_RU.md
 
 ## Install
+
 ```
 npm install --save rplain
 ```
+
 Or
+
 ```
 yarn add rplain
 ```
+
 ## Usage
 
 ```javascript
-import RPlain from 'rplain';
+import RPlain from "rplain";
 
 class MyComponent extends Component {
-    render() {
-        const {children} = this.props;
-        return (
-            <RPlain>
-                <div>First</div>
-                <div>Second</div>
-                <div>Third</div>    
-                {children}
-            </RPlain>
-        );
-    }
+  render() {
+    const { children } = this.props;
+    return (
+      <RPlain>
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+        {children}
+      </RPlain>
+    );
+  }
 }
 ```
+
 Or
+
 ```javascript
-import RPlain from 'rplain';
+import RPlain from "rplain";
 // some code
 <RPlain>
-    <div>First</div>
-    <div>Second</div>
-    <div>Third</div>    
-</RPlain>
+  <div>First</div>
+  <div>Second</div>
+  <div>Third</div>
+</RPlain>;
 ```
+
 Also you can see example page: https://xnimorz.github.io/rplain/ with source code: https://github.com/xnimorz/rplain/blob/master/examples/example.js
 
 ## JavaScript modules support
@@ -66,53 +74,64 @@ In React <=15 you have to use container. So we have to use such constructions in
 
 ```javascript
 class MyComponent extends Component {
-    render() {
-        const {children, title} = this.props;
+  render() {
+    const { children, title } = this.props;
 
-        return (
-            <div>
-                <div class='MyComponent-title'>{title}</div>
-                <div class='MyComponent-a1'>First useful content item</div>
-                <div class='MyComponent-a2'>Second useful content item</div>
-                {children}
-            </div>
-        );
-    }
+    return (
+      <div>
+        <div class="MyComponent-title">{title}</div>
+        <div class="MyComponent-a1">First useful content item</div>
+        <div class="MyComponent-a2">Second useful content item</div>
+        {children}
+      </div>
+    );
+  }
 }
 ```
-With React 16 component's render method can return arrays, plain strings. 
+
+With React 16 component's render method can return arrays, plain strings.
 Let's rewrite our example to array:
+
 ```javascript
 class MyComponent extends Component {
-    render() {
-        const {children, title} = this.props;
+  render() {
+    const { children, title } = this.props;
 
-        return [                    
-            <div key='title' class='MyComponent-title'>{title}</div>,
-            <div key='a1' class='MyComponent_a1'>First useful content item</div>,
-            <div key='a2' class='MyComponent_a2'>Second useful content item</div>,
-            children,
-        ];
-    }
+    return [
+      <div key="title" class="MyComponent-title">
+        {title}
+      </div>,
+      <div key="a1" class="MyComponent_a1">
+        First useful content item
+      </div>,
+      <div key="a2" class="MyComponent_a2">
+        Second useful content item
+      </div>,
+      children
+    ];
+  }
 }
 ```
+
 When we would return array, we must use "key" attribute, put comma to the end of each block. But our content isn't an array. So we can wrap our content with RPlain component:
+
 ```javascript
 class MyComponent extends Component {
-    render() {
-        const {children, title} = this.props;
+  render() {
+    const { children, title } = this.props;
 
-        return (
-            <RPlain>
-                <div class='MyComponent-title'>{title}</div>
-                <div class='MyComponent-a1'>First useful content item</div>
-                <div class='MyComponent-a2'>Second useful content item</div>
-                {children}
-            </RPlain>
-        );            
-    }
+    return (
+      <RPlain>
+        <div class="MyComponent-title">{title}</div>
+        <div class="MyComponent-a1">First useful content item</div>
+        <div class="MyComponent-a2">Second useful content item</div>
+        {children}
+      </RPlain>
+    );
+  }
 }
 ```
+
 ## Why you create separate package?
 
 RPlain-component is useful in severel projects. So I create separate package.
